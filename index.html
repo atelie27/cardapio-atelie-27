@@ -141,6 +141,7 @@ button:hover{
 
 <!-- Tradicional -->
 <div class="card">
+<img src="tradicional.jpg" alt="Brigadeiro Tradicional">
 <h2>Tradicional</h2>
 <div class="descricao">
 Chocolate 50% cacau, textura cremosa e finalização premium com granulado refinado.
@@ -156,6 +157,7 @@ Chocolate 50% cacau, textura cremosa e finalização premium com granulado refin
 
 <!-- Beijinho -->
 <div class="card">
+<img src="coco.jpg" alt="Brigadeiro de Beijinho">
 <h2>Beijinho</h2>
 <div class="descricao">
 Leite condensado e coco selecionado, textura suave e delicada.
@@ -171,6 +173,7 @@ Leite condensado e coco selecionado, textura suave e delicada.
 
 <!-- Casadinho -->
 <div class="card">
+<img src="casadinho.jpg" alt="Brigadeiro Casadinho">
 <h2>Casadinho</h2>
 <div class="descricao">
 Brigadeiro tradicional com leite em pó combinados em perfeita harmonia.
@@ -186,6 +189,7 @@ Brigadeiro tradicional com leite em pó combinados em perfeita harmonia.
 
 <!-- Limão -->
 <div class="card">
+<img src="limao.jpg" alt="Brigadeiro de Limao">
 <h2>Limão</h2>
 <div class="descricao">
 Leve acidez equilibrada com textura cremosa e refrescante.
@@ -201,6 +205,7 @@ Leve acidez equilibrada com textura cremosa e refrescante.
 
 <!-- Maracujá -->
 <div class="card">
+<img src="maracuja.jpg" alt="Brigadeiro de Maracuja">
 <h2>Maracujá</h2>
 <div class="descricao">
 Notas tropicais vibrantes com equilíbrio perfeito entre doce e ácido.
@@ -216,6 +221,7 @@ Notas tropicais vibrantes com equilíbrio perfeito entre doce e ácido.
 
 <!-- Ninho -->
 <div class="card">
+<img src="ninho.jpg" alt="Brigadeiro Ninho">
 <h2>Ninho</h2>
 <div class="descricao">
 Leite em pó premium com textura extremamente cremosa.
@@ -291,20 +297,22 @@ function toggleCard(button){
         : "Ver Valores";
 }
 
-/* Animação ao rolar a página */
+/* Animação contínua ao rolar */
 const cards = document.querySelectorAll(".card");
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
         if(entry.isIntersecting){
             entry.target.classList.add("show");
+        } else {
+            entry.target.classList.remove("show"); 
         }
     });
-}, {
-    threshold: 0.2
+},{
+    threshold:0.25
 });
 
-cards.forEach(card => {
+cards.forEach(card=>{
     observer.observe(card);
 });
 
