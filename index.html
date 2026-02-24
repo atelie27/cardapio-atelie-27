@@ -36,8 +36,26 @@ h1{
 
 .menu{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+    grid-template-columns:repeat(3, 1fr); /* 3 colunas no desktop */
     gap:40px;
+}
+
+/* Tablet */
+@media(max-width:1024px){
+    .menu{
+        grid-template-columns:repeat(2, 1fr);
+    }
+}
+
+/* Celular */
+@media(max-width:768px){
+    .menu{
+        grid-template-columns:1fr; /* 1 coluna */
+    }
+
+    h1{
+        font-size:40px;
+    }
 }
 
 /* Cards começam invisíveis para animação */
