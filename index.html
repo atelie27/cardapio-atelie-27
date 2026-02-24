@@ -270,13 +270,34 @@ Massa suave envolvendo núcleo cremoso de avelã.
 </div>
 
 <script>
+
+/* Abrir e fechar valores */
 function toggleCard(button){
     const card = button.parentElement;
     card.classList.toggle("active");
+
     button.innerText = card.classList.contains("active") 
         ? "Ocultar Valores" 
         : "Ver Valores";
 }
+
+/* Animação ao rolar a página */
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+}, {
+    threshold: 0.2
+});
+
+cards.forEach(card => {
+    observer.observe(card);
+});
+
 </script>
 
 </body>
