@@ -40,6 +40,19 @@ h1{
     gap:40px;
 }
 
+/* Animação inicial escondida */
+.card{
+    opacity:0;
+    transform:translateY(40px);
+    transition:opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Quando aparecer na tela */
+.card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+    
 .card{
     background:#FAF4E8; /* um pouco mais claro que o fundo */
     border-radius:25px;
@@ -208,6 +221,7 @@ Leite em pó premium com textura extremamente cremosa.
 
 <!-- Churros -->
 <div class="card">
+<img src="churros.jpg" alt="Brigadeiro Churros">
 <h2>Churros</h2>
 <div class="descricao">
 Recheado com doce de leite artesanal e toque sutil de canela.
