@@ -99,32 +99,63 @@ h1{
     font-weight:700;
 }
 
-/* Responsivo */
-@media(max-width:768px){
-    .hero-content img{
-        width:260px;
+@media (max-width:768px){
+
+    .container{
+        width:92%;
+        padding:40px 0;
     }
 
     h1{
-        font-size:40px;
-        margin-top:60px;
-    }
-}
-
-/* Responsivo */
-@media(max-width:768px){
-    .hero{
-        height:70vh;
-    }
-
-    .logo-animada img{
-        width:240px;
-    }
-
-    h1{
-        font-size:40px;
+        font-size:34px;
         margin-top:40px;
+        margin-bottom:40px;
     }
+
+    .menu{
+        grid-template-columns:1fr;
+        gap:30px; /* espaço real entre cards */
+    }
+
+    .card{
+        max-width:100%;
+        padding:20px;
+        border-radius:20px;
+    }
+
+    .card img{
+        height:190px;
+        border-radius:16px;
+    }
+
+    .card h2{
+        font-size:22px;
+    }
+
+    .descricao{
+        font-size:16px;
+        line-height:1.5;
+    }
+
+    .valores{
+        font-size:16px;
+    }
+
+    button{
+        width:100%;
+        padding:12px;
+        font-size:15px;
+    }
+
+    /* Hero ajustada */
+    .hero{
+        height:75vh;
+    }
+
+    .hero-content img{
+        width:200px;
+    }
+
 }
 
  .menu{
