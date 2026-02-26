@@ -266,44 +266,84 @@ button:hover{
     }
 }
 
-    /* ===== SEÇÃO INFORMAÇÕES ===== */
+/* ===== SEÇÃO INFORMAÇÕES PREMIUM ===== */
 
 .info-section{
-    padding:140px 0;
-    background:#F6EDDD;
+    padding:160px 0;
+    background:linear-gradient(to bottom, #F2E9D8, #EFE4CF);
     text-align:center;
 }
 
-.info-container{
-    width:80%;
-    max-width:800px;
+.info-wrapper{
+    width:90%;
+    max-width:1100px;
     margin:auto;
 }
 
 .info-section h2{
-    font-size:40px;
+    font-size:42px;
     margin-bottom:20px;
 }
 
-.info-section p{
-    font-size:20px;
-    line-height:1.8;
-    margin-bottom:25px;
+.info-grid{
+    margin-top:60px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
 }
 
-@media (max-width:768px){
+.info-card{
+    background:#FAF4E8;
+    padding:40px 30px;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.04);
+    transition:0.4s ease;
+}
+
+.info-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 50px rgba(0,0,0,0.07);
+}
+
+.info-card h3{
+    font-size:22px;
+    margin-bottom:20px;
+    color:#4b280a;
+}
+
+.info-card p{
+    font-size:18px;
+    line-height:1.7;
+    margin-bottom:12px;
+}
+
+/* ===== RESPONSIVO ===== */
+
+@media(max-width:1024px){
+    .info-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:768px){
 
     .info-section{
-        padding:90px 0;
+        padding:100px 0;
     }
 
-    .info-section h2{
-        font-size:28px;
+    .info-grid{
+        grid-template-columns:1fr;
+        gap:25px;
     }
 
-    .info-section p{
+    .info-card{
+        padding:30px 20px;
+    }
+
+    .info-card p{
         font-size:16px;
     }
+
 }
 
 </style>
@@ -521,27 +561,44 @@ Personalize seus brigadeiros com acabamentos exclusivos para tornar cada detalhe
 </div>
 </div>
 
+
+<!--INFOOOOO-->
 <section class="info-section">
-    <div class="info-container">
+
+    <div class="info-wrapper">
+
         <h2>Informações Importantes</h2>
         <div class="linha-dourada"></div>
 
-        <p>Caixas com <strong>50 unidades</strong> podem conter até <strong>2 sabores</strong>.</p>
+        <div class="info-grid">
 
-        <p>Caixas com <strong>100 unidades</strong> podem conter até <strong>4 sabores</strong>.</p>
+            <div class="info-card">
+                <h3>Sabores por Caixa</h3>
+                <p>• 50 unidades → até <strong>2 sabores</strong></p>
+                <p>• 100 unidades → até <strong>4 sabores</strong></p>
+            </div>
 
-        <p>Todos os brigadeiros seguem nossa padronização:
-        envoltos por <strong>forminha marrom</strong> e acomodados
-        em <strong>caixeta transparente</strong>.</p>
+            <div class="info-card">
+                <h3>Padronização</h3>
+                <p>Todos os brigadeiros são envoltos por
+                <strong>forminha marrom</strong> e acomodados
+                em <strong>caixeta transparente</strong>.</p>
+            </div>
 
-        <p>Realizamos apenas <strong>retiradas no local</strong>,
-        das <strong>14h às 18h</strong>.</p>
+            <div class="info-card">
+                <h3>Pedidos & Retirada</h3>
+                <p>Retiradas das <strong>14h às 18h</strong>.</p>
+                <p>Solicitamos <strong>50% do valor como sinal</strong>
+                para iniciar a produção.</p>
+                <p>No momento não realizamos entregas.</p>
+            </div>
 
-        <p>Solicitamos <strong>50% do valor como sinal</strong>
-        para iniciar a produção e garantir seu pedido.</p>
+        </div>
+
     </div>
-</section>
 
+</section>
+    
 <script>
 
 /* Abrir e fechar valores */
