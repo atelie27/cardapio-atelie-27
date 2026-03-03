@@ -56,17 +56,17 @@ body{
     cursor:pointer;
 }
 
-/* TÍTULOS */
+/* TITULOS */
 .section-title{
     text-align:center;
     font-size:58px;
-    margin:100px 0 30px 0; /* mantém respiro maior */
+    margin:80px 0 20px 0;
 }
 
 .category-title{
     text-align:center;
     font-size:36px;
-    margin:80px 0 30px 0; /* mantém padrão elegante */
+    margin:60px 0 30px 0;
 }
 
 /* GRID */
@@ -74,8 +74,7 @@ body{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:40px;
-    align-items:stretch;
-    margin-bottom:40px; /* espaço padrão entre tópicos */
+    align-items:stretch; /* força mesma altura */
 }
 
 @media(max-width:1024px){
@@ -88,7 +87,7 @@ body{
     .category-title{ font-size:26px;}
 }
 
-/* CARDS */
+/* CARDS PADRONIZADOS */
 .card{
     background:#FAF4E8;
     border-radius:25px;
@@ -96,29 +95,17 @@ body{
     box-shadow:0 15px 40px rgba(0,0,0,0.05);
     display:flex;
     flex-direction:column;
-    height:100%;
+    height:100%; /* força altura igual */
 }
 
-/* ÁREA FIXA DA IMAGEM */
-.image-wrapper{
+.card img{
     width:100%;
-    height:300px;
-    display:flex;
-    align-items:center;
-    justify-content:center; /* centraliza a imagem dentro da área */
-    overflow:hidden;
+    height:300px; /* altura fixa */
+    object-fit:cover;
     border-radius:18px;
     margin-bottom:20px;
-    background:#f5efe4;
 }
 
-.image-wrapper img{
-    max-width:100%;
-    max-height:100%;
-    object-fit:contain; /* mantém proporção e centraliza */
-}
-
-/* CONTEÚDO */
 .card h2{
     font-size:24px;
     margin-bottom:10px;
@@ -127,7 +114,7 @@ body{
 .descricao{
     font-size:17px;
     line-height:1.5;
-    flex-grow:1;
+    flex-grow:1; /* ocupa espaço igual */
     margin-bottom:15px;
 }
 
@@ -135,17 +122,12 @@ body{
     font-size:18px;
     font-weight:bold;
     color:#4b280a;
-    margin-top:auto;
-}
-
-/* ADICIONAIS CENTRALIZADOS */
-.adicional{
-    text-align:center;
+    margin-top:auto; /* fixa valor no final */
 }
 
 /* INFO SECTION */
 .info-section{
-    padding:90px 0 60px 0;
+    padding:90px 0 50px 0;
     background:linear-gradient(to bottom,#F2E9D8,#EFE4CF);
 }
 
@@ -199,102 +181,98 @@ body{
 
 <h1 id="menu" class="section-title">Brigadeiros</h1>
 
-<!-- TRADICIONAIS -->
 <h2 class="category-title">Tradicionais</h2>
 <div class="menu">
 
 <div class="card">
-<div class="image-wrapper"><img src="tradicional.png"></div>
+<img src="tradicional.png">
 <h2>Tradicional</h2>
-<div class="descricao">Chocolate 50% cacau cuidadosamente preparado.</div>
-<div class="valor-unit">R$ 2,80</div>
+<div class="descricao">Chocolate 50% cacau com granulado macio.</div>
+<div class="valor-unit">R$ 2,80 / unidade</div>
 </div>
 
 <div class="card">
-<div class="image-wrapper"><img src="casadinho.jpg"></div>
+<img src="casadinho.jpg">
 <h2>Casadinho</h2>
 <div class="descricao">Brigadeiro tradicional com leite em pó.</div>
-<div class="valor-unit">R$ 3,00</div>
+<div class="valor-unit">R$ 3,00 / unidade</div>
 </div>
 
 <div class="card">
-<div class="image-wrapper"><img src="coco.jpg"></div>
+<img src="coco.jpg">
 <h2>Beijinho</h2>
 <div class="descricao">Leite condensado com coco selecionado.</div>
-<div class="valor-unit">R$ 3,10</div>
+<div class="valor-unit">R$ 3,10 / unidade</div>
 </div>
 
 </div>
 
-<!-- ESPECIAIS -->
 <h2 class="category-title">Especiais</h2>
 <div class="menu">
 
 <div class="card">
-<div class="image-wrapper"><img src="limao.png"></div>
+<img src="limao.png">
 <h2>Limão</h2>
 <div class="descricao">Notas cítricas suaves e equilibradas.</div>
-<div class="valor-unit">R$ 3,20</div>
+<div class="valor-unit">R$ 3,20 / unidade</div>
 </div>
 
 <div class="card">
-<div class="image-wrapper"><img src="maracuja.jpeg"></div>
+<img src="maracuja.jpeg">
 <h2>Maracujá</h2>
 <div class="descricao">Sabor tropical com leve acidez.</div>
-<div class="valor-unit">R$ 3,20</div>
+<div class="valor-unit">R$ 3,20 / unidade</div>
 </div>
 
 <div class="card">
-<div class="image-wrapper"><img src="ninho.jpg"></div>
+<img src="ninho.jpg">
 <h2>Ninho</h2>
 <div class="descricao">Leite em pó macio e cremoso.</div>
-<div class="valor-unit">R$ 3,20</div>
+<div class="valor-unit">R$ 3,20 / unidade</div>
 </div>
 
 <div class="card">
-<div class="image-wrapper"><img src="churros.jpg"></div>
+<img src="churros.jpg">
 <h2>Churros</h2>
 <div class="descricao">Açúcar, canela e doce de leite.</div>
-<div class="valor-unit">R$ 3,30</div>
+<div class="valor-unit">R$ 3,30 / unidade</div>
 </div>
 
 <div class="card">
-<div class="image-wrapper"><img src="black.png"></div>
+<img src="black.png">
 <h2>Black Velvet</h2>
 <div class="descricao">Chocolate intenso 100% cacau.</div>
-<div class="valor-unit">R$ 3,50</div>
+<div class="valor-unit">R$ 3,50 / unidade</div>
 </div>
 
 </div>
 
-<!-- PREMIUM -->
 <h2 class="category-title">Premium</h2>
 <div class="menu">
 <div class="card">
-<div class="image-wrapper"><img src="ninho-nutella.png"></div>
+<img src="ninho-nutella.png">
 <h2>Ninho com Nutella</h2>
-<div class="descricao">Leite em pó com recheio cremoso de avelã.</div>
-<div class="valor-unit">R$ 3,80</div>
+<div class="descricao">Leite em pó com roseta cremosa de avelã.</div>
+<div class="valor-unit">R$ 3,80 / unidade</div>
 </div>
 </div>
 
-<!-- ADICIONAIS -->
 <h2 class="category-title">Adicionais</h2>
 <div class="menu">
 
-<div class="card adicional">
+<div class="card">
 <h2>Brigadeiros Coloridos</h2>
 <div class="descricao">Detalhes decorativos personalizados.</div>
 <div class="valor-unit">+ R$ 0,10 / unidade</div>
 </div>
 
-<div class="card adicional">
+<div class="card">
 <h2>Brigadeiros Carimbados</h2>
 <div class="descricao">Acabamento especial com identidade.</div>
 <div class="valor-unit">+ R$ 0,05 / unidade</div>
 </div>
 
-<div class="card adicional">
+<div class="card">
 <h2>Brigadeiros com Formato</h2>
 <div class="descricao">Modelados artesanalmente.</div>
 <div class="valor-unit">+ R$ 0,10 / unidade</div>
@@ -330,7 +308,7 @@ body{
 
 <div class="info-grid">
 <div class="info-card"><p>Sabores respeitam o limite de cada caixa</p><p>Produção sob encomenda</p></div>
-<div class="info-card"><p>Pedido confirmado mediante 50% de sinal</p><p>Prazo mínimo: ____ dias</p></div>
+<div class="info-card"><p>Pedido confirmado mediante 50% do valor como sinal</p><p>Prazo mínimo para encomendar: 48h antes</p></div>
 <div class="info-card"><p>Retiradas das 14h às 18h</p><p>No momento não realizamos entregas</p></div>
 </div>
 
