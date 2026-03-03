@@ -31,23 +31,6 @@ body{
     align-items:center;
     justify-content:center;
     text-align:center;
-    animation:fadeBackground 1.2s ease forwards;
-}
-
-@keyframes fadeBackground{
-    from{opacity:0;}
-    to{opacity:1;}
-}
-
-.hero-content{
-    opacity:0;
-    transform:translateY(60px) scale(0.95);
-    transition:1s ease;
-}
-
-.hero-content.show{
-    opacity:1;
-    transform:translateY(0) scale(1);
 }
 
 .hero-content img{
@@ -60,7 +43,6 @@ body{
     height:2px;
     background:#C7A247;
     margin:20px auto 30px auto;
-    border-radius:2px;
 }
 
 .btn-hero{
@@ -72,20 +54,13 @@ body{
     font-family:'Sirenik', serif;
     font-size:18px;
     cursor:pointer;
-    transition:0.4s ease;
 }
 
-.btn-hero:hover{
-    background:#4b280a;
-    color:#fff;
-}
-
-/* TÍTULOS */
+/* TITULOS */
 .section-title{
     text-align:center;
     font-size:58px;
     margin:80px 0 20px 0;
-    font-weight:700;
 }
 
 .category-title{
@@ -99,6 +74,7 @@ body{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:40px;
+    align-items:stretch; /* força mesma altura */
 }
 
 @media(max-width:1024px){
@@ -107,46 +83,38 @@ body{
 
 @media(max-width:768px){
     .menu{ grid-template-columns:1fr; }
-    .section-title{ font-size:38px; margin-top:40px;}
+    .section-title{ font-size:38px;}
     .category-title{ font-size:26px;}
 }
 
-/* CARDS SABORES */
+/* CARDS PADRONIZADOS */
 .card{
     background:#FAF4E8;
-    max-width:380px;
-    margin:0 auto;
     border-radius:25px;
     padding:25px;
     box-shadow:0 15px 40px rgba(0,0,0,0.05);
     display:flex;
     flex-direction:column;
-    opacity:0;
-    transform:translateY(40px);
-    transition:0.6s ease;
-}
-
-.card.show{
-    opacity:1;
-    transform:translateY(0);
+    height:100%; /* força altura igual */
 }
 
 .card img{
     width:100%;
-    height:340px;
+    height:300px; /* altura fixa */
     object-fit:cover;
     border-radius:18px;
-    margin-bottom:15px;
+    margin-bottom:20px;
 }
 
 .card h2{
-    font-size:26px;
+    font-size:24px;
     margin-bottom:10px;
 }
 
 .descricao{
-    font-size:18px;
-    line-height:1.6;
+    font-size:17px;
+    line-height:1.5;
+    flex-grow:1; /* ocupa espaço igual */
     margin-bottom:15px;
 }
 
@@ -154,11 +122,12 @@ body{
     font-size:18px;
     font-weight:bold;
     color:#4b280a;
+    margin-top:auto; /* fixa valor no final */
 }
 
-/* INFO & CAIXAS */
+/* INFO SECTION */
 .info-section{
-    padding:100px 0 60px 0; /* reduzi espaço inferior */
+    padding:90px 0 50px 0;
     background:linear-gradient(to bottom,#F2E9D8,#EFE4CF);
 }
 
@@ -174,15 +143,7 @@ body{
     padding:35px 25px;
     border-radius:25px;
     box-shadow:0 15px 40px rgba(0,0,0,0.04);
-    text-align:center; /* centralizado */
-}
-
-.info-card h3{
-    margin-bottom:15px;
-}
-
-.info-card p{
-    margin:8px 0;
+    text-align:center;
 }
 
 @media(max-width:1024px){
@@ -195,7 +156,7 @@ body{
 
 /* CONTATO */
 .contact-section{
-    padding:80px 0 120px 0; /* diminui espaço superior */
+    padding:70px 0 110px 0;
     background:#EFE4CF;
     text-align:center;
 }
@@ -210,20 +171,19 @@ body{
 
 <div class="container">
 
-<!-- CAPA -->
 <section class="hero">
-    <div class="hero-content logo-animada">
-        <img src="logo.png" alt="Logo Ateliê 27">
-        <div class="linha-dourada"></div>
-        <button class="btn-hero" onclick="scrollToMenu()">Ver Cardápio</button>
-    </div>
+<div class="hero-content">
+<img src="logo.png">
+<div class="linha-dourada"></div>
+<button class="btn-hero" onclick="scrollToMenu()">Ver Cardápio</button>
+</div>
 </section>
 
 <h1 id="menu" class="section-title">Brigadeiros</h1>
 
-<!-- TRADICIONAIS -->
 <h2 class="category-title">Tradicionais</h2>
 <div class="menu">
+
 <div class="card">
 <img src="tradicional.png">
 <h2>Tradicional</h2>
@@ -244,11 +204,12 @@ body{
 <div class="descricao">Leite condensado com coco selecionado.</div>
 <div class="valor-unit">R$ 3,10</div>
 </div>
+
 </div>
 
-<!-- ESPECIAIS -->
 <h2 class="category-title">Especiais</h2>
 <div class="menu">
+
 <div class="card">
 <img src="limao.png">
 <h2>Limão</h2>
@@ -283,9 +244,9 @@ body{
 <div class="descricao">Chocolate intenso 100% cacau.</div>
 <div class="valor-unit">R$ 3,50</div>
 </div>
+
 </div>
 
-<!-- PREMIUM -->
 <h2 class="category-title">Premium</h2>
 <div class="menu">
 <div class="card">
@@ -296,19 +257,18 @@ body{
 </div>
 </div>
 
-<!-- ADICIONAIS -->
 <h2 class="category-title">Adicionais</h2>
 <div class="menu">
 
 <div class="card">
 <h2>Brigadeiros Coloridos</h2>
-<div class="descricao">Detalhes que transformam o doce em parte da decoração.</div>
+<div class="descricao">Detalhes decorativos personalizados.</div>
 <div class="valor-unit">+ R$ 0,10 / unidade</div>
 </div>
 
 <div class="card">
 <h2>Brigadeiros Carimbados</h2>
-<div class="descricao">Cada unidade com acabamento especial.</div>
+<div class="descricao">Acabamento especial com identidade.</div>
 <div class="valor-unit">+ R$ 0,05 / unidade</div>
 </div>
 
@@ -322,7 +282,6 @@ body{
 
 </div>
 
-<!-- CAIXAS + VALORES + INFO -->
 <section class="info-section">
 <div class="container">
 
@@ -330,72 +289,32 @@ body{
 <div class="linha-dourada"></div>
 
 <div class="info-grid">
-<div class="info-card">
-<h3>25 unidades</h3>
-<p>Até 1 sabor</p>
-</div>
-
-<div class="info-card">
-<h3>50 unidades</h3>
-<p>Até 2 sabores</p>
-</div>
-
-<div class="info-card">
-<h3>100 unidades</h3>
-<p>Até 4 sabores</p>
-</div>
+<div class="info-card"><h3>25 unidades</h3><p>Até 1 sabor</p></div>
+<div class="info-card"><h3>50 unidades</h3><p>Até 2 sabores</p></div>
+<div class="info-card"><h3>100 unidades</h3><p>Até 4 sabores</p></div>
 </div>
 
 <h2 class="section-title">Valores das Caixas</h2>
 <div class="linha-dourada"></div>
 
 <div class="info-grid">
-<div class="info-card">
-<h3>Tradicionais</h3>
-<p>25 – R$ 65</p>
-<p>50 – R$ 110</p>
-<p>100 – R$ 200</p>
-</div>
-
-<div class="info-card">
-<h3>Especiais</h3>
-<p>25 – R$ 77</p>
-<p>50 – R$ 130</p>
-<p>100 – R$ 220</p>
-</div>
-
-<div class="info-card">
-<h3>Premium</h3>
-<p>25 – R$ 90</p>
-<p>50 – R$ 165</p>
-<p>100 – R$ 300</p>
-</div>
+<div class="info-card"><h3>Tradicionais</h3><p>25 – R$ 65</p><p>50 – R$ 110</p><p>100 – R$ 200</p></div>
+<div class="info-card"><h3>Especiais</h3><p>25 – R$ 77</p><p>50 – R$ 130</p><p>100 – R$ 220</p></div>
+<div class="info-card"><h3>Premium</h3><p>25 – R$ 90</p><p>50 – R$ 165</p><p>100 – R$ 300</p></div>
 </div>
 
 <h2 class="section-title">Informações Importantes</h2>
 <div class="linha-dourada"></div>
 
 <div class="info-grid">
-<div class="info-card">
-<p>Sabores respeitam o limite de cada caixa</p>
-<p>Produção sob encomenda</p>
-</div>
-
-<div class="info-card">
-<p>Pedido confirmado mediante 50% de sinal</p>
-<p>Prazo mínimo: ____ dias</p>
-</div>
-
-<div class="info-card">
-<p>Retiradas das 14h às 18h</p>
-<p>No momento não realizamos entregas</p>
-</div>
+<div class="info-card"><p>Sabores respeitam o limite de cada caixa</p><p>Produção sob encomenda</p></div>
+<div class="info-card"><p>Pedido confirmado mediante 50% de sinal</p><p>Prazo mínimo: ____ dias</p></div>
+<div class="info-card"><p>Retiradas das 14h às 18h</p><p>No momento não realizamos entregas</p></div>
 </div>
 
 </div>
 </section>
 
-<!-- CONTATO -->
 <section class="contact-section">
 <div class="container">
 <div class="linha-dourada"></div>
@@ -413,18 +332,6 @@ body{
 function scrollToMenu(){
 document.getElementById("menu").scrollIntoView({behavior:"smooth"});
 }
-
-const elements=document.querySelectorAll(".card,.logo-animada");
-
-const observer=new IntersectionObserver((entries)=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-});
-},{threshold:0.25});
-
-elements.forEach(el=>observer.observe(el));
 </script>
 
 </body>
