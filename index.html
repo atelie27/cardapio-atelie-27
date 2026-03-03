@@ -8,14 +8,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Sirenik:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-    box-sizing:border-box;
-}
+*{ box-sizing:border-box; }
 
 body{
     margin:0;
-    background:#F2E9D8; /* creme */
+    background:#F2E9D8;
     font-family:'Sirenik', serif;
     color:#3A332C;
 }
@@ -27,8 +24,7 @@ body{
     padding:60px 0;
 }
 
-/* ===== HERO PREMIUM ===== */
-
+/* HERO */
 .hero{
     height:100vh;
     display:flex;
@@ -38,10 +34,9 @@ body{
     animation:fadeBackground 1.2s ease forwards;
 }
 
-/* Fade-in do fundo */
 @keyframes fadeBackground{
-    from{ opacity:0; }
-    to{ opacity:1; }
+    from{opacity:0;}
+    to{opacity:1;}
 }
 
 .hero-content{
@@ -55,14 +50,11 @@ body{
     transform:translateY(0) scale(1);
 }
 
-/* Logo maior */
 .hero-content img{
     width:450px;
-    height:auto;
     margin-bottom:25px;
 }
 
-/* Linha dourada fina */
 .linha-dourada{
     width:120px;
     height:2px;
@@ -71,7 +63,6 @@ body{
     border-radius:2px;
 }
 
-/* Botão hero */
 .btn-hero{
     background:#C7A247;
     color:#482813;
@@ -87,102 +78,44 @@ body{
 .btn-hero:hover{
     background:#4b280a;
     color:#fff;
-    transform:translateY(-3px);
 }
 
-/* Espaço elegante antes do menu */
-h1{
+/* TÍTULOS */
+.section-title{
     text-align:center;
     font-size:58px;
-    margin-top:100px;
-    margin-bottom:60px;
+    margin:80px 0 20px 0;
     font-weight:700;
 }
 
-@media (max-width:768px){
-
-    .container{
-        width:92%;
-        padding:40px 0;
-    }
-
-    h1{
-        font-size:34px;
-        margin-top:40px;
-        margin-bottom:40px;
-    }
-
-    .menu{
-        grid-template-columns:1fr;
-        gap:30px; /* espaço real entre cards */
-    }
-
-    .card{
-        max-width:100%;
-        padding:20px;
-        border-radius:20px;
-    }
-
-    .card img{
-        height:190px;
-        border-radius:16px;
-    }
-
-    .card h2{
-        font-size:22px;
-    }
-
-    .descricao{
-        font-size:16px;
-        line-height:1.5;
-    }
-
-    .valores{
-        font-size:16px;
-    }
-
-    button{
-        width:100%;
-        padding:12px;
-        font-size:15px;
-    }
-
-    /* Hero ajustada */
-    .hero{
-        height:75vh;
-    }
-
-    .hero-content img{
-        width:240px;
-    }
-
+.category-title{
+    text-align:center;
+    font-size:36px;
+    margin:60px 0 30px 0;
 }
 
- .menu{
+/* GRID */
+.menu{
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:repeat(3,1fr);
     gap:40px;
-    width:100%;
-    align-items:start;
 }
 
-@media (max-width:1024px){
-    .menu{
-        grid-template-columns: 1fr 1fr;
-    }
+@media(max-width:1024px){
+    .menu{ grid-template-columns:1fr 1fr; }
 }
 
-@media (max-width:768px){
-    .menu{
-        grid-template-columns: 1fr;
-        gap:30px; /* espaço real entre cards */
-    }
+@media(max-width:768px){
+    .menu{ grid-template-columns:1fr; }
+    .section-title{ font-size:38px; margin-top:40px;}
+    .category-title{ font-size:26px;}
 }
-/* Cards começam invisíveis para animação */
+
+/* CARDS SABORES */
 .card{
     background:#FAF4E8;
-    max-width:380px;   /* limita tamanho */
-    margin:0 auto;  
+    max-width:380px;
+    margin:0 auto;
     border-radius:25px;
     padding:25px;
     box-shadow:0 15px 40px rgba(0,0,0,0.05);
@@ -190,17 +123,12 @@ h1{
     flex-direction:column;
     opacity:0;
     transform:translateY(40px);
-    transition:opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+    transition:0.6s ease;
 }
 
 .card.show{
     opacity:1;
     transform:translateY(0);
-}
-
-.card:hover{
-    transform:translateY(-5px); /* menos exagerado */
-    box-shadow:0 20px 50px rgba(0,0,0,0.08);
 }
 
 .card img{
@@ -211,188 +139,70 @@ h1{
     margin-bottom:15px;
 }
 
-.card:hover img{
-    transform:scale(1.03);
-}
-
 .card h2{
     font-size:26px;
-    margin-bottom:15px;
+    margin-bottom:10px;
 }
 
 .descricao{
     font-size:18px;
     line-height:1.6;
-    margin-bottom:20px;
+    margin-bottom:15px;
 }
 
-button{
-    background:#C7A247;
-    color:#482813;
-    border:none;
-    padding:12px 22px;
-    border-radius:30px;
-    font-family:'Sirenik', serif;
-    font-size:16px;
-    cursor:pointer;
-    transition:0.3s;
-}
-    
-.card.active button{
-    background:#4b280a;
-    color:#fff;
+.valor-unit{
+    font-size:18px;
+    font-weight:bold;
+    color:#4b280a;
 }
 
-button:hover{
-    background:#4b280a;
-}
-
-.valores{
-    display:none;
-    margin-top:20px;
-    font-size:17px;
-}
-
-.valores p{
-    display:flex;
-    justify-content:space-between;
-    border-bottom:1px dashed #D5C3A1;
-    padding:8px 0;
-    margin:0;
-}
-
-.card.active .valores{
-    display:block;
-}
-
-@media(max-width:768px){
-    h1{
-        font-size:40px;
-    }
-}
-
-/* ===== SEÇÃO INFORMAÇÕES PREMIUM ===== */
-
+/* INFO & CAIXAS */
 .info-section{
-    padding:160px 0;
-    background:linear-gradient(to bottom, #F2E9D8, #EFE4CF);
-    text-align:center;
-}
-
-.info-wrapper{
-    width:90%;
-    max-width:1100px;
-    margin:auto;
-}
-
-.info-section h2{
-    font-size:42px;
-    margin-bottom:20px;
+    padding:100px 0 60px 0; /* reduzi espaço inferior */
+    background:linear-gradient(to bottom,#F2E9D8,#EFE4CF);
 }
 
 .info-grid{
-    margin-top:60px;
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:40px;
+    gap:30px;
+    margin-top:40px;
 }
 
 .info-card{
     background:#FAF4E8;
-    padding:40px 30px;
+    padding:35px 25px;
     border-radius:25px;
     box-shadow:0 15px 40px rgba(0,0,0,0.04);
-    transition:0.4s ease;
-}
-
-.info-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 20px 50px rgba(0,0,0,0.07);
+    text-align:center; /* centralizado */
 }
 
 .info-card h3{
-    font-size:22px;
-    margin-bottom:20px;
-    color:#4b280a;
+    margin-bottom:15px;
 }
 
 .info-card p{
-    font-size:18px;
-    line-height:1.7;
-    margin-bottom:12px;
+    margin:8px 0;
 }
 
-/* ===== RESPONSIVO ===== */
-
 @media(max-width:1024px){
-    .info-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
+    .info-grid{ grid-template-columns:1fr 1fr; }
 }
 
 @media(max-width:768px){
-
-    .info-section{
-        padding:100px 0;
-    }
-
-    .info-grid{
-        grid-template-columns:1fr;
-        gap:25px;
-    }
-
-    .info-card{
-        padding:30px 20px;
-    }
-
-    .info-card p{
-        font-size:16px;
-    }
-
+    .info-grid{ grid-template-columns:1fr; }
 }
 
-/* ===== CONTATO ===== */
-
+/* CONTATO */
 .contact-section{
-    padding:120px 0 160px 0;
+    padding:80px 0 120px 0; /* diminui espaço superior */
     background:#EFE4CF;
     text-align:center;
 }
 
-.contact-container{
-    width:90%;
-    max-width:600px;
-    margin:auto;
-}
-
-.contact-section h3{
-    font-size:30px;
-    margin:25px 0 40px 0;
-}
-
 .contact-info p{
     font-size:20px;
-    margin:8px 0;
 }
-
-.contact-info p strong{
-    display:block;
-    margin-top:25px;
-    font-size:16px;
-    letter-spacing:2px;
-    color:#4b280a;
-}
-
-@media(max-width:768px){
-    .contact-section{
-        padding:90px 0 120px 0;
-    }
-
-    .contact-info p{
-        font-size:16px;
-    }
-}
-
 </style>
 </head>
 
@@ -400,7 +210,7 @@ button:hover{
 
 <div class="container">
 
-<!-- CAPA INICIAL PREMIUM -->
+<!-- CAPA -->
 <section class="hero">
     <div class="hero-content logo-animada">
         <img src="logo.png" alt="Logo Ateliê 27">
@@ -409,303 +219,212 @@ button:hover{
     </div>
 </section>
 
-<h1 id="menu">Brigadeiros</h1>
+<h1 id="menu" class="section-title">Brigadeiros</h1>
 
+<!-- TRADICIONAIS -->
+<h2 class="category-title">Tradicionais</h2>
 <div class="menu">
-<!-- Tradicional -->
 <div class="card">
-<img src="tradicional.png" alt="Brigadeiro Tradicional">
+<img src="tradicional.png">
 <h2>Tradicional</h2>
-<div class="descricao">
-O clássico que nunca perde o encanto.Chocolate 50% cacau cuidadosamente preparado para alcançar o equilíbrio.
-</div>
-<button onclick="toggleCard(this)">Ver Valores</button>
-<div class="valores">
-<p><span>Unidade</span><span>R$2,80</span></p>
-<p><span>25 unidades</span><span>R$65,00</span></p>
-<p><span>50 unidades</span><span>R$110,00</span></p>
-<p><span>100 unidades</span><span>R$200,00</span></p>
-</div>
+<div class="descricao">Chocolate 50% cacau cuidadosamente preparado.</div>
+<div class="valor-unit">R$ 2,80</div>
 </div>
 
-<!-- Beijinho -->
 <div class="card">
-<img src="coco.jpg" alt="Brigadeiro de Beijinho">
-<h2>Beijinho</h2>
-<div class="descricao">
-Delicada combinação de leite condensado e coco selecionado, resultando em um doce suave.
-</div>
-<button onclick="toggleCard(this)">Ver Valores</button>
-<div class="valores">
-<p><span>Unidade</span><span>R$3,10</span></p>
-<p><span>25 unidades</span><span>R$75,00</span></p>
-<p><span>50 unidades</span><span>R$120,00</span></p>
-<p><span>100 unidades</span><span>R$215,00</span></p>
-</div>
-</div>
-
-<!-- Casadinho -->
-<div class="card">
-<img src="casadinho.jpg" alt="Brigadeiro Casadinho">
+<img src="casadinho.jpg">
 <h2>Casadinho</h2>
-<div class="descricao">
-O encontro perfeito entre o brigadeiro tradicional e o leite em pó, criando uma harmonia cremosa que une dois clássicos.
+<div class="descricao">Brigadeiro tradicional com leite em pó.</div>
+<div class="valor-unit">R$ 3,00</div>
 </div>
-<button onclick="toggleCard(this)">Ver Valores</button>
-<div class="valores">
-<p><span>Unidade</span><span>R$3,00</span></p>
-<p><span>25 unidades</span><span>R$70,00</span></p>
-<p><span>50 unidades</span><span>R$110,00</span></p>
-<p><span>100 unidades</span><span>R$205,00</span></p>
+
+<div class="card">
+<img src="coco.jpg">
+<h2>Beijinho</h2>
+<div class="descricao">Leite condensado com coco selecionado.</div>
+<div class="valor-unit">R$ 3,10</div>
 </div>
 </div>
 
-<!-- Limão -->
+<!-- ESPECIAIS -->
+<h2 class="category-title">Especiais</h2>
+<div class="menu">
 <div class="card">
-<img src="limao.png" alt="Brigadeiro de Limao">
+<img src="limao.png">
 <h2>Limão</h2>
-<div class="descricao">
-Notas cítricas suaves que equilibram o doce na medida certa.
-</div>
-<button onclick="toggleCard(this)">Ver Valores</button>
-<div class="valores">
-<p><span>Unidade</span><span>R$3.20</span></p>
-<p><span>25 unidades</span><span>R$77,00</span></p>
-<p><span>50 unidades</span><span>R$130,00</span></p>
-<p><span>100 unidades</span><span>R$220,00</span></p>
-</div>
+<div class="descricao">Notas cítricas suaves e equilibradas.</div>
+<div class="valor-unit">R$ 3,20</div>
 </div>
 
-<!-- Maracujá -->
 <div class="card">
-<img src="maracuja.jpeg" alt="Brigadeiro de Maracuja">
+<img src="maracuja.jpeg">
 <h2>Maracujá</h2>
-<div class="descricao">
-Sabor tropical marcante com leve acidez natural, proporcionando uma experiência refrescante.
-</div>
-<button onclick="toggleCard(this)">Ver Valores</button>
-<div class="valores">
-<p><span>Unidade</span><span>R$3.20</span></p>
-<p><span>25 unidades</span><span>R$77,00</span></p>
-<p><span>50 unidades</span><span>R$130,00</span></p>
-<p><span>100 unidades</span><span>R$220,00</span></p>
-</div>
+<div class="descricao">Sabor tropical com leve acidez.</div>
+<div class="valor-unit">R$ 3,20</div>
 </div>
 
-<!-- Ninho -->
 <div class="card">
-<img src="ninho.jpg" alt="Brigadeiro Ninho">
+<img src="ninho.jpg">
 <h2>Ninho</h2>
-<div class="descricao">
-Leite em pó transformado em um brigadeiro delicado, macio e intensamente cremoso.
-</div>
-<button onclick="toggleCard(this)">Ver Valores</button>
-<div class="valores">
-<p><span>Unidade</span><span>R$3.20</span></p>
-<p><span>25 unidades</span><span>R$77,00</span></p>
-<p><span>50 unidades</span><span>R$130,00</span></p>
-<p><span>100 unidades</span><span>R$220,00</span></p>
-</div>
+<div class="descricao">Leite em pó macio e cremoso.</div>
+<div class="valor-unit">R$ 3,20</div>
 </div>
 
-<!-- Churros -->
 <div class="card">
-<img src="churros.jpg" alt="Brigadeiro Churros">
+<img src="churros.jpg">
 <h2>Churros</h2>
-<div class="descricao">
-Massa cremosa envolvida por açúcar e canela, recheada com doce de leite.
-</div>
-<button onclick="toggleCard(this)">Ver Valores</button>
-<div class="valores">
-<p><span>Unidade</span><span>R$3,30</span></p>
-<p><span>25 unidades</span><span>R$78,00</span></p>
-<p><span>50 unidades</span><span>R$140,00</span></p>
-<p><span>100 unidades</span><span>R$225,00</span></p>
-</div>
+<div class="descricao">Açúcar, canela e doce de leite.</div>
+<div class="valor-unit">R$ 3,30</div>
 </div>
 
-<!-- Black -->
 <div class="card">
-<img src="black.png" alt="Brigadeiro Black Velvet">
+<img src="black.png">
 <h2>Black Velvet</h2>
-<div class="descricao">
-Chocolate intenso 100% cacau para quem aprecia sabores profundos, menos adocicado.
-</div>
-<button onclick="toggleCard(this)">Ver Valores</button>
-<div class="valores">
-<p><span>Unidade</span><span>R$3,50</span></p>
-<p><span>25 unidades</span><span>R$80,00</span></p>
-<p><span>50 unidades</span><span>R$150,00</span></p>
-<p><span>100 unidades</span><span>R$240,00</span></p>
+<div class="descricao">Chocolate intenso 100% cacau.</div>
+<div class="valor-unit">R$ 3,50</div>
 </div>
 </div>
 
-<!-- Ninho com Nutella -->
+<!-- PREMIUM -->
+<h2 class="category-title">Premium</h2>
+<div class="menu">
 <div class="card">
-<img src="ninho-nutella.png" alt="Brigadeiro Ninho com Nutella">
+<img src="ninho-nutella.png">
 <h2>Ninho com Nutella</h2>
-<div class="descricao">
-Suavidade do leite em pó envolvendo um recheio cremoso de avelã, criando contraste perfeito.
-</div>
-<button onclick="toggleCard(this)">Ver Valores</button>
-<div class="valores">
-<p><span>Unidade</span><span>R$3,80</span></p>
-<p><span>25 unidades</span><span>R$90,00</span></p>
-<p><span>50 unidades</span><span>R$165,00</span></p>
-<p><span>100 unidades</span><span>R$300,00</span></p>
+<div class="descricao">Leite em pó com recheio cremoso de avelã.</div>
+<div class="valor-unit">R$ 3,80</div>
 </div>
 </div>
 
-<!-- Decorações -->
+<!-- ADICIONAIS -->
+<h2 class="category-title">Adicionais</h2>
+<div class="menu">
+
 <div class="card">
-<img src="colorido.jpg" alt="Brigadeiro Colorido">
 <h2>Brigadeiros Coloridos</h2>
-
-<div class="descricao">
-Pequenos detalhes que transformam o doce em parte da decoração, adicionando charme, alegria e personalidade à sua encomenda.
+<div class="descricao">Detalhes que transformam o doce em parte da decoração.</div>
+<div class="valor-unit">+ R$ 0,10 / unidade</div>
 </div>
 
-<button onclick="toggleCard(this)">Ver Adicionais</button>
-
-<div class="valores">
-<p><span>Coloridos</span><span>+ R$0,10 / unidade</span></p>
-
-</div>
-
-</div>
-
-<div class="card"> 
-<img src="carimbo.jpg" alt="Brigadeiro Carimbado">
+<div class="card">
 <h2>Brigadeiros Carimbados</h2>
-
-<div class="descricao">
-Cada unidade ganha identidade própria através de um acabamento especial.
+<div class="descricao">Cada unidade com acabamento especial.</div>
+<div class="valor-unit">+ R$ 0,05 / unidade</div>
 </div>
 
-<button onclick="toggleCard(this)">Ver Adicionais</button>
-
-<div class="valores">
-<p><span>Com carimbo</span><span>+ R$0,05 / unidade</span></p>
-</div>
-
-</div>
-
-<div class="card"> 
-<img src="formato.jpg" alt="Brigadeiro Formato">
+<div class="card">
 <h2>Brigadeiros com Formato</h2>
-
-<div class="descricao">
-Modelados com cuidado artesanal, unem estética e sabor para criar doces que encantam antes mesmo da primeira mordida.
-</div>
-
-<button onclick="toggleCard(this)">Ver Adicionais</button>
-
-<div class="valores">
-<p><span>Com Formato</span><span>+ R$0,10/ unidade</span></p>
+<div class="descricao">Modelados artesanalmente.</div>
+<div class="valor-unit">+ R$ 0,10 / unidade</div>
 </div>
 
 </div>
 
 </div>
-</div>
 
-
-<!--INFOOOOO-->
+<!-- CAIXAS + VALORES + INFO -->
 <section class="info-section">
+<div class="container">
 
-    <div class="info-wrapper">
+<h2 class="section-title">Caixas Personalizadas</h2>
+<div class="linha-dourada"></div>
 
-        <h2>Informações Importantes</h2>
-        <div class="linha-dourada"></div>
-
-        <div class="info-grid">
-
-            <div class="info-card">
-                <h3>Sabores por Caixa</h3>
-                <p>• 50 unidades → até <strong>2 sabores</strong></p>
-                <p>• 100 unidades → até <strong>4 sabores</strong></p>
-            </div>
-
-            <div class="info-card">
-                <h3>Padronização</h3>
-                <p>Todos os brigadeiros são envoltos por
-                <strong>forminha marrom</strong> e acomodados
-                em <strong>caixeta transparente</strong>.</p>
-            </div>
-
-            <div class="info-card">
-                <h3>Pedidos & Retirada</h3>
-                <p>Retiradas das <strong>14h às 18h</strong>.</p>
-                <p>Solicitamos <strong>50% do valor como sinal</strong>
-                para iniciar a produção.</p>
-                <p>No momento não realizamos entregas.</p>
-            </div>
-
-        </div>
-
-    </div>
-
-    </div>
+<div class="info-grid">
+<div class="info-card">
+<h3>25 unidades</h3>
+<p>Até 1 sabor</p>
 </div>
+
+<div class="info-card">
+<h3>50 unidades</h3>
+<p>Até 2 sabores</p>
+</div>
+
+<div class="info-card">
+<h3>100 unidades</h3>
+<p>Até 4 sabores</p>
+</div>
+</div>
+
+<h2 class="section-title">Valores das Caixas</h2>
+<div class="linha-dourada"></div>
+
+<div class="info-grid">
+<div class="info-card">
+<h3>Tradicionais</h3>
+<p>25 – R$ 65</p>
+<p>50 – R$ 110</p>
+<p>100 – R$ 200</p>
+</div>
+
+<div class="info-card">
+<h3>Especiais</h3>
+<p>25 – R$ 77</p>
+<p>50 – R$ 130</p>
+<p>100 – R$ 220</p>
+</div>
+
+<div class="info-card">
+<h3>Premium</h3>
+<p>25 – R$ 90</p>
+<p>50 – R$ 165</p>
+<p>100 – R$ 300</p>
+</div>
+</div>
+
+<h2 class="section-title">Informações Importantes</h2>
+<div class="linha-dourada"></div>
+
+<div class="info-grid">
+<div class="info-card">
+<p>Sabores respeitam o limite de cada caixa</p>
+<p>Produção sob encomenda</p>
+</div>
+
+<div class="info-card">
+<p>Pedido confirmado mediante 50% de sinal</p>
+<p>Prazo mínimo: ____ dias</p>
+</div>
+
+<div class="info-card">
+<p>Retiradas das 14h às 18h</p>
+<p>No momento não realizamos entregas</p>
+</div>
+</div>
+
+</div>
+</section>
 
 <!-- CONTATO -->
 <section class="contact-section">
-
-    <div class="contact-container">
-
-        <div class="linha-dourada"></div>
-
-        <h3>Contato</h3>
-
-        <div class="contact-info">
-            <p><strong>Telefone</strong></p>
-            <p>(47) 9944-5543</p>
-
-            <p><strong>Email</strong></p>
-            <p>atelie27.doceria@gmail.com</p>
-        </div>
-
-    </div>
-
+<div class="container">
+<div class="linha-dourada"></div>
+<h3>Contato</h3>
+<div class="contact-info">
+<p><strong>Telefone</strong></p>
+<p>(47) 9944-5543</p>
+<p><strong>Email</strong></p>
+<p>atelie27.doceria@gmail.com</p>
+</div>
+</div>
 </section>
 
 <script>
-
-/* Abrir e fechar valores */
-function toggleCard(button){
-    const card = button.parentElement;
-    card.classList.toggle("active");
-
-    button.innerText = card.classList.contains("active") 
-        ? "Ocultar Valores" 
-        : "Ver Valores";
-}
-
 function scrollToMenu(){
-    document.getElementById("menu").scrollIntoView({
-        behavior: "smooth"
-    });
+document.getElementById("menu").scrollIntoView({behavior:"smooth"});
 }
 
-/* Animação ao rolar */
-const elements = document.querySelectorAll(".card, .logo-animada");
+const elements=document.querySelectorAll(".card,.logo-animada");
 
-const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add("show");
-        } else {
-            entry.target.classList.remove("show");
-        }
-    });
-},{
-    threshold:0.25
+const observer=new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
 });
+},{threshold:0.25});
 
-elements.forEach(el=>{
-    observer.observe(el);
-});
-
+elements.forEach(el=>observer.observe(el));
 </script>
 
 </body>
