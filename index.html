@@ -8,162 +8,220 @@
 <link href="https://fonts.googleapis.com/css2?family=Sirenik:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{ box-sizing:border-box; }
 
 body{
-    margin:0;
-    background:#F2E9D8;
-    font-family:'Sirenik', serif;
-    color:#3A332C;
+margin:0;
+background:#F2E9D8;
+font-family:'Sirenik', serif;
+color:#3A332C;
+}
+
+/* ANIMAÇÕES */
+
+.reveal{
+opacity:0;
+transform:translateY(60px);
+transition:all .9s cubic-bezier(.17,.67,.34,1);
+}
+
+.reveal.visible{
+opacity:1;
+transform:translateY(0);
 }
 
 .container{
-    width:90%;
-    max-width:1300px;
-    margin:auto;
-    padding:60px 0;
+width:90%;
+max-width:1300px;
+margin:auto;
+padding:60px 0;
 }
 
 /* HERO */
+
 .hero{
-    height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
 }
 
 .hero-content img{
-    width:450px;
-    margin-bottom:25px;
+width:450px;
+margin-bottom:25px;
 }
 
 .linha-dourada{
-    width:120px;
-    height:2px;
-    background:#C7A247;
-    margin:20px auto 30px auto;
+width:120px;
+height:2px;
+background:#C7A247;
+margin:20px auto 30px auto;
 }
 
 .btn-hero{
-    background:#C7A247;
-    color:#482813;
-    border:none;
-    padding:14px 32px;
-    border-radius:40px;
-    font-family:'Sirenik', serif;
-    font-size:18px;
-    cursor:pointer;
+background:#C7A247;
+color:#482813;
+border:none;
+padding:14px 32px;
+border-radius:40px;
+font-family:'Sirenik', serif;
+font-size:18px;
+cursor:pointer;
+transition:all .3s;
+}
+
+.btn-hero:hover{
+transform:scale(1.05);
 }
 
 /* TITULOS */
+
 .section-title{
-    text-align:center;
-    font-size:58px;
-    margin:80px 0 20px 0;
+text-align:center;
+font-size:58px;
+margin:80px 0 10px 0;
 }
 
 .category-title{
-    text-align:center;
-    font-size:36px;
-    margin:60px 0 30px 0;
+text-align:center;
+font-size:36px;
+margin:60px 0 30px 0;
 }
 
 /* GRID */
+
 .menu{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:40px;
-    align-items:stretch; /* força mesma altura */
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:40px;
+align-items:stretch;
 }
 
 @media(max-width:1024px){
-    .menu{ grid-template-columns:1fr 1fr; }
+.menu{ grid-template-columns:1fr 1fr; }
 }
 
 @media(max-width:768px){
-    .menu{ grid-template-columns:1fr; }
-    .section-title{ font-size:38px;}
-    .category-title{ font-size:26px;}
+.menu{ grid-template-columns:1fr; }
+.section-title{ font-size:38px;}
+.category-title{ font-size:26px;}
 }
 
-/* CARDS PADRONIZADOS */
+/* CARDS */
+
 .card{
-    background:#FAF4E8;
-    border-radius:25px;
-    padding:25px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.05);
-    display:flex;
-    flex-direction:column;
-    height:100%; /* força altura igual */
+background:#FAF4E8;
+border-radius:25px;
+padding:25px;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
+display:flex;
+flex-direction:column;
+height:100%;
+transition:transform .35s, box-shadow .35s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 25px 60px rgba(0,0,0,0.08);
 }
 
 .card img{
-    width:100%;
-    height:300px; /* altura fixa */
-    object-fit:cover;
-    border-radius:18px;
-    margin-bottom:20px;
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:18px;
+margin-bottom:20px;
 }
 
 .card h2{
-    font-size:24px;
-    margin-bottom:10px;
+font-size:24px;
+margin-bottom:10px;
 }
 
 .descricao{
-    font-size:17px;
-    line-height:1.5;
-    flex-grow:1; /* ocupa espaço igual */
-    margin-bottom:15px;
+font-size:17px;
+line-height:1.5;
+flex-grow:1;
+margin-bottom:15px;
 }
 
 .valor-unit{
-    font-size:18px;
-    font-weight:bold;
-    color:#4b280a;
-    margin-top:auto; /* fixa valor no final */
+font-size:18px;
+font-weight:bold;
+color:#4b280a;
+margin-top:auto;
 }
 
 /* INFO SECTION */
+
 .info-section{
-    padding:90px 0 50px 0;
-    background:linear-gradient(to bottom,#F2E9D8,#EFE4CF);
+padding:90px 0 50px 0;
+background:linear-gradient(to bottom,#F2E9D8,#EFE4CF);
 }
 
 .info-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
-    margin-top:40px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-top:40px;
 }
 
 .info-card{
-    background:#FAF4E8;
-    padding:35px 25px;
-    border-radius:25px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.04);
-    text-align:center;
+background:#FAF4E8;
+padding:35px 25px;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,0.04);
+text-align:center;
+transition:transform .35s, box-shadow .35s;
+}
+
+.info-card:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 50px rgba(0,0,0,0.06);
 }
 
 @media(max-width:1024px){
-    .info-grid{ grid-template-columns:1fr 1fr; }
+.info-grid{ grid-template-columns:1fr 1fr; }
 }
 
 @media(max-width:768px){
-    .info-grid{ grid-template-columns:1fr; }
+.info-grid{ grid-template-columns:1fr; }
 }
 
 /* CONTATO */
+
 .contact-section{
-    padding:70px 0 110px 0;
-    background:#EFE4CF;
-    text-align:center;
+padding:70px 0 110px 0;
+background:#EFE4CF;
+text-align:center;
 }
 
 .contact-info p{
-    font-size:20px;
+font-size:20px;
+margin:8px 0;
 }
+
+/* BOTÃO WHATSAPP */
+
+.whatsapp-btn{
+display:inline-block;
+margin-top:25px;
+background:#25D366;
+color:white;
+padding:14px 30px;
+border-radius:40px;
+font-size:18px;
+text-decoration:none;
+transition:all .3s;
+}
+
+.whatsapp-btn:hover{
+transform:scale(1.05);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
 </style>
 </head>
 
@@ -171,7 +229,7 @@ body{
 
 <div class="container">
 
-<section class="hero">
+<section class="hero reveal">
 <div class="hero-content">
 <img src="logo.png">
 <div class="linha-dourada"></div>
@@ -179,26 +237,28 @@ body{
 </div>
 </section>
 
-<h1 id="menu" class="section-title">Brigadeiros</h1>
+<h1 id="menu" class="section-title reveal">Brigadeiros</h1>
+<div class="linha-dourada"></div>
 
-<h2 class="category-title">Tradicionais</h2>
+<h2 class="category-title reveal">Tradicionais</h2>
+
 <div class="menu">
 
-<div class="card">
+<div class="card reveal">
 <img src="tradicional.png">
 <h2>Tradicional</h2>
 <div class="descricao">Chocolate 50% cacau com granulado macio.</div>
 <div class="valor-unit">R$ 2,80 / unidade</div>
 </div>
 
-<div class="card">
+<div class="card reveal">
 <img src="casadinho.jpg">
 <h2>Casadinho</h2>
 <div class="descricao">Brigadeiro tradicional com leite em pó.</div>
 <div class="valor-unit">R$ 3,00 / unidade</div>
 </div>
 
-<div class="card">
+<div class="card reveal">
 <img src="coco.jpg">
 <h2>Beijinho</h2>
 <div class="descricao">Leite condensado com coco selecionado.</div>
@@ -207,38 +267,39 @@ body{
 
 </div>
 
-<h2 class="category-title">Especiais</h2>
+<h2 class="category-title reveal">Especiais</h2>
+
 <div class="menu">
 
-<div class="card">
+<div class="card reveal">
 <img src="limao.png">
 <h2>Limão</h2>
 <div class="descricao">Notas cítricas suaves e equilibradas.</div>
 <div class="valor-unit">R$ 3,20 / unidade</div>
 </div>
 
-<div class="card">
+<div class="card reveal">
 <img src="maracuja.jpeg">
 <h2>Maracujá</h2>
 <div class="descricao">Sabor tropical com leve acidez.</div>
 <div class="valor-unit">R$ 3,20 / unidade</div>
 </div>
 
-<div class="card">
+<div class="card reveal">
 <img src="ninho.jpg">
 <h2>Ninho</h2>
 <div class="descricao">Leite em pó macio e cremoso.</div>
 <div class="valor-unit">R$ 3,20 / unidade</div>
 </div>
 
-<div class="card">
+<div class="card reveal">
 <img src="churros.jpg">
 <h2>Churros</h2>
 <div class="descricao">Açúcar, canela e doce de leite.</div>
 <div class="valor-unit">R$ 3,30 / unidade</div>
 </div>
 
-<div class="card">
+<div class="card reveal">
 <img src="black.png">
 <h2>Black Velvet</h2>
 <div class="descricao">Chocolate intenso 100% cacau.</div>
@@ -247,32 +308,36 @@ body{
 
 </div>
 
-<h2 class="category-title">Premium</h2>
+<h2 class="category-title reveal">Premium</h2>
+
 <div class="menu">
-<div class="card">
+
+<div class="card reveal">
 <img src="ninho-nutella.png">
 <h2>Ninho com Nutella</h2>
 <div class="descricao">Leite em pó com roseta cremosa de avelã.</div>
 <div class="valor-unit">R$ 3,80 / unidade</div>
 </div>
+
 </div>
 
-<h2 class="category-title">Adicionais</h2>
+<h2 class="category-title reveal">Adicionais</h2>
+
 <div class="menu">
 
-<div class="card">
+<div class="card reveal">
 <h2>Brigadeiros Coloridos</h2>
 <div class="descricao">Detalhes decorativos personalizados.</div>
 <div class="valor-unit">+ R$ 0,10 / unidade</div>
 </div>
 
-<div class="card">
+<div class="card reveal">
 <h2>Brigadeiros Carimbados</h2>
 <div class="descricao">Acabamento especial com identidade.</div>
 <div class="valor-unit">+ R$ 0,05 / unidade</div>
 </div>
 
-<div class="card">
+<div class="card reveal">
 <h2>Brigadeiros com Formato</h2>
 <div class="descricao">Modelados artesanalmente.</div>
 <div class="valor-unit">+ R$ 0,10 / unidade</div>
@@ -282,56 +347,134 @@ body{
 
 </div>
 
-<section class="info-section">
+<section class="info-section reveal">
+
 <div class="container">
 
-<h2 class="section-title">Caixas Personalizadas</h2>
+<h2 class="section-title reveal">Caixas Personalizadas</h2>
 <div class="linha-dourada"></div>
 
 <div class="info-grid">
-<div class="info-card"><h3>25 unidades</h3><p>Até 1 sabor</p></div>
-<div class="info-card"><h3>50 unidades</h3><p>Até 2 sabores</p></div>
-<div class="info-card"><h3>100 unidades</h3><p>Até 4 sabores</p></div>
+
+<div class="info-card reveal">
+<h3>25 unidades</h3>
+<p>Até 1 sabor</p>
 </div>
 
-<h2 class="section-title">Valores das Caixas</h2>
-<div class="linha-dourada"></div>
-
-<div class="info-grid">
-<div class="info-card"><h3>Tradicionais</h3><p>25 unidades – R$ 65</p><p>50 unidades – R$ 110</p><p>100 unidades – R$ 200</p></div>
-<div class="info-card"><h3>Especiais</h3><p>25 unidades – R$ 77</p><p>50 unidades – R$ 130</p><p>100 unidades – R$ 220</p></div>
-<div class="info-card"><h3>Premium</h3><p>25 unidades – R$ 90</p><p>50 unidades– R$ 165</p><p>100 unidades – R$ 300</p></div>
+<div class="info-card reveal">
+<h3>50 unidades</h3>
+<p>Até 2 sabores</p>
 </div>
 
-<h2 class="section-title">Informações Importantes</h2>
+<div class="info-card reveal">
+<h3>100 unidades</h3>
+<p>Até 4 sabores</p>
+</div>
+
+</div>
+
+<h2 class="section-title reveal">Valores das Caixas</h2>
 <div class="linha-dourada"></div>
 
 <div class="info-grid">
-<div class="info-card"><p>Sabores respeitam o limite de cada caixa</p><p>Produção sob encomenda</p></div>
-<div class="info-card"><p>Pedido confirmado mediante 50% do valor como sinal</p><p>Prazo mínimo para encomendar: 48h antes</p></div>
-<div class="info-card"><p>Retiradas das 14h às 18h</p><p>No momento não realizamos entregas</p></div>
+
+<div class="info-card reveal">
+<h3>Tradicionais</h3>
+<p>25 unidades – R$ 65</p>
+<p>50 unidades – R$ 110</p>
+<p>100 unidades – R$ 200</p>
+</div>
+
+<div class="info-card reveal">
+<h3>Especiais</h3>
+<p>25 unidades – R$ 77</p>
+<p>50 unidades – R$ 130</p>
+<p>100 unidades – R$ 220</p>
+</div>
+
+<div class="info-card reveal">
+<h3>Premium</h3>
+<p>25 unidades – R$ 90</p>
+<p>50 unidades – R$ 165</p>
+<p>100 unidades – R$ 300</p>
+</div>
+
+</div>
+
+<h2 class="section-title reveal">Informações Importantes</h2>
+<div class="linha-dourada"></div>
+
+<div class="info-grid">
+
+<div class="info-card reveal">
+<p>Sabores respeitam o limite de cada caixa</p>
+<p>Produção sob encomenda</p>
+</div>
+
+<div class="info-card reveal">
+<p>Pedido confirmado mediante 50% do valor como sinal</p>
+<p>Prazo mínimo para encomendar: 48h antes</p>
+</div>
+
+<div class="info-card reveal">
+<p>Retiradas das 14h às 18h</p>
+<p>No momento não realizamos entregas</p>
+</div>
+
 </div>
 
 </div>
 </section>
 
-<section class="contact-section">
+<section class="contact-section reveal">
+
 <div class="container">
+
 <div class="linha-dourada"></div>
+
 <h3>Contato</h3>
+
 <div class="contact-info">
+
 <p><strong>Telefone</strong></p>
-<p>(47) 9944-5543</p>
+<p>(47) 99445-5543</p>
+
 <p><strong>Email</strong></p>
 <p>atelie27.doceria@gmail.com</p>
+
+<a class="whatsapp-btn"
+href="https://wa.me/5547994455543"
+target="_blank">
+Fazer pedido pelo WhatsApp
+</a>
+
 </div>
+
 </div>
 </section>
 
 <script>
+
 function scrollToMenu(){
 document.getElementById("menu").scrollIntoView({behavior:"smooth"});
 }
+
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("visible");
+}else{
+entry.target.classList.remove("visible");
+}
+});
+},{threshold:0.15});
+
+reveals.forEach(el=>{
+observer.observe(el);
+});
+
 </script>
 
 </body>
