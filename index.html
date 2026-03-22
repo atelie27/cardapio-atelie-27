@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Sirenik:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-
 *{ box-sizing:border-box; }
 
 body{
@@ -19,13 +18,11 @@ color:#3A332C;
 }
 
 /* ANIMAÇÕES */
-
 .reveal{
 opacity:0;
 transform:translateY(60px);
 transition:all .9s cubic-bezier(.17,.67,.34,1);
 }
-
 .reveal.visible{
 opacity:1;
 transform:translateY(0);
@@ -39,7 +36,6 @@ padding:60px 0;
 }
 
 /* HERO */
-
 .hero{
 height:100vh;
 display:flex;
@@ -47,7 +43,6 @@ align-items:center;
 justify-content:center;
 text-align:center;
 }
-
 .hero-content img{
 width:450px;
 margin-bottom:25px;
@@ -66,24 +61,16 @@ color:#482813;
 border:none;
 padding:14px 32px;
 border-radius:40px;
-font-family:'Sirenik', serif;
 font-size:18px;
 cursor:pointer;
-transition:all .3s;
-}
-
-.btn-hero:hover{
-transform:scale(1.05);
 }
 
 /* TITULOS */
-
 .section-title{
 text-align:center;
 font-size:58px;
 margin:80px 0 10px 0;
 }
-
 .category-title{
 text-align:center;
 font-size:36px;
@@ -91,26 +78,22 @@ margin:60px 0 30px 0;
 }
 
 /* GRID */
-
 .menu{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:40px;
-align-items:stretch;
 }
 
 @media(max-width:1024px){
 .menu{ grid-template-columns:1fr 1fr; }
 }
-
 @media(max-width:768px){
 .menu{ grid-template-columns:1fr; }
 .section-title{ font-size:38px;}
 .category-title{ font-size:26px;}
 }
 
-/* CARDS */
-
+/* CARD */
 .card{
 background:#FAF4E8;
 border-radius:25px;
@@ -118,17 +101,9 @@ padding:25px;
 box-shadow:0 15px 40px rgba(0,0,0,0.05);
 display:flex;
 flex-direction:column;
-height:100%;
-transition:transform .35s, box-shadow .35s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 25px 60px rgba(0,0,0,0.08);
 }
 
 /* CARROSSEL */
-
 .carousel{
 position:relative;
 width:100%;
@@ -137,13 +112,11 @@ overflow:hidden;
 border-radius:18px;
 margin-bottom:20px;
 }
-
 .carousel-images{
 display:flex;
-transition:transform .4s ease;
+transition:.4s;
 height:100%;
 }
-
 .carousel-images img{
 width:100%;
 height:300px;
@@ -158,94 +131,48 @@ transform:translateY(-50%);
 background:rgba(0,0,0,0.4);
 color:white;
 border:none;
-font-size:22px;
 padding:8px 12px;
 cursor:pointer;
 border-radius:50%;
 }
-
 .prev{ left:10px; }
 .next{ right:10px; }
 
-.carousel button:hover{
-background:rgba(0,0,0,0.6);
-}
+.card h2{ font-size:24px; }
+.descricao{ flex-grow:1; margin-bottom:10px; }
+.valor-unit{ font-weight:bold; }
 
-.card h2{
-font-size:24px;
-margin-bottom:10px;
-}
-
-.descricao{
-font-size:17px;
-line-height:1.5;
-flex-grow:1;
-margin-bottom:15px;
-}
-
-.valor-unit{
-font-size:18px;
-font-weight:bold;
-color:#4b280a;
-margin-top:auto;
-}
-
-/* RESTO DO SEU CSS (mantido igual) */
-
+/* INFO */
 .info-section{
-padding:90px 0 50px 0;
-background:linear-gradient(to bottom,#F2E9D8,#EFE4CF);
+padding:90px 0;
+background:#EFE4CF;
 }
-
 .info-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:30px;
-margin-top:40px;
 }
-
 .info-card{
 background:#FAF4E8;
-padding:35px 25px;
-border-radius:25px;
-box-shadow:0 15px 40px rgba(0,0,0,0.04);
+padding:25px;
+border-radius:20px;
 text-align:center;
-transition:transform .35s, box-shadow .35s;
 }
 
-.info-card:hover{
-transform:translateY(-6px);
-box-shadow:0 20px 50px rgba(0,0,0,0.06);
-}
-
+/* CONTATO */
 .contact-section{
-padding:70px 0 110px 0;
-background:#EFE4CF;
+padding:70px 0;
 text-align:center;
 }
-
-.contact-info p{
-font-size:20px;
-margin:8px 0;
-}
-
 .whatsapp-btn{
 display:inline-block;
-margin-top:25px;
+margin-top:20px;
 background:#25D366;
 color:white;
 padding:14px 30px;
 border-radius:40px;
-font-size:18px;
 text-decoration:none;
-transition:all .3s;
 }
-
-.whatsapp-btn:hover{
-transform:scale(1.05);
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
-
 </style>
 </head>
 
@@ -264,26 +191,24 @@ box-shadow:0 10px 25px rgba(0,0,0,0.15);
 <h1 id="menu" class="section-title reveal">Brigadeiros</h1>
 <div class="linha-dourada"></div>
 
-<h2 class="category-title reveal">Tradicionais</h2>
-
+<h2 class="category-title">Tradicionais</h2>
 <div class="menu">
 
-<div class="card reveal">
+<div class="card">
 <div class="carousel">
 <div class="carousel-images">
 <img src="tradicional.png">
 <img src="tradicional2.png">
-<img src="tradicional3.png">
 </div>
 <button class="prev">&#10094;</button>
 <button class="next">&#10095;</button>
 </div>
 <h2>Tradicional</h2>
-<div class="descricao">Chocolate 50% cacau com granulado macio.</div>
-<div class="valor-unit">R$ 2,80 / unidade</div>
+<p>Chocolate 50% cacau com granulado macio.</p>
+<div class="valor-unit">R$ 2,80</div>
 </div>
 
-<div class="card reveal">
+<div class="card">
 <div class="carousel">
 <div class="carousel-images">
 <img src="casadinho.jpg">
@@ -293,11 +218,11 @@ box-shadow:0 10px 25px rgba(0,0,0,0.15);
 <button class="next">&#10095;</button>
 </div>
 <h2>Casadinho</h2>
-<div class="descricao">Brigadeiro tradicional com leite em pó.</div>
-<div class="valor-unit">R$ 3,00 / unidade</div>
+<p>Brigadeiro com leite em pó.</p>
+<div class="valor-unit">R$ 3,00</div>
 </div>
 
-<div class="card reveal">
+<div class="card">
 <div class="carousel">
 <div class="carousel-images">
 <img src="coco.jpg">
@@ -307,54 +232,152 @@ box-shadow:0 10px 25px rgba(0,0,0,0.15);
 <button class="next">&#10095;</button>
 </div>
 <h2>Beijinho</h2>
-<div class="descricao">Leite condensado com coco selecionado.</div>
-<div class="valor-unit">R$ 3,10 / unidade</div>
+<p>Leite condensado com coco.</p>
+<div class="valor-unit">R$ 3,10</div>
+</div>
+
+</div>
+
+<h2 class="category-title">Especiais</h2>
+<div class="menu">
+
+<div class="card">
+<div class="carousel">
+<div class="carousel-images">
+<img src="maracuja.jpeg">
+<img src="maracuja2.jpeg">
+</div>
+<button class="prev">&#10094;</button>
+<button class="next">&#10095;</button>
+</div>
+<h2>Maracujá</h2>
+<div class="valor-unit">R$ 3,20</div>
+</div>
+
+<div class="card">
+<div class="carousel">
+<div class="carousel-images">
+<img src="ninho.jpg">
+<img src="ninho2.jpg">
+</div>
+<button class="prev">&#10094;</button>
+<button class="next">&#10095;</button>
+</div>
+<h2>Ninho</h2>
+<div class="valor-unit">R$ 3,20</div>
+</div>
+
+<div class="card">
+<div class="carousel">
+<div class="carousel-images">
+<img src="churros.jpg">
+<img src="churros2.jpg">
+</div>
+<button class="prev">&#10094;</button>
+<button class="next">&#10095;</button>
+</div>
+<h2>Churros</h2>
+<div class="valor-unit">R$ 3,30</div>
+</div>
+
+</div>
+
+<h2 class="category-title">Premium</h2>
+<div class="menu">
+
+<div class="card">
+<div class="carousel">
+<div class="carousel-images">
+<img src="ninho-nutella.png">
+<img src="ninho-nutella2.png">
+</div>
+<button class="prev">&#10094;</button>
+<button class="next">&#10095;</button>
+</div>
+<h2>Ninho com Nutella</h2>
+<div class="valor-unit">R$ 3,80</div>
+</div>
+
+<div class="card">
+<div class="carousel">
+<div class="carousel-images">
+<img src="black.png">
+<img src="black2.png">
+</div>
+<button class="prev">&#10094;</button>
+<button class="next">&#10095;</button>
+</div>
+<h2>Black Velvet</h2>
+<div class="valor-unit">R$ 3,50</div>
 </div>
 
 </div>
 
 </div>
+
+<!-- INFO -->
+<section class="info-section">
+<div class="container">
+
+<h2 class="section-title">Caixas</h2>
+<div class="info-grid">
+<div class="info-card">25 unidades</div>
+<div class="info-card">50 unidades</div>
+<div class="info-card">100 unidades</div>
+</div>
+
+<h2 class="section-title">Valores</h2>
+<div class="info-grid">
+<div class="info-card">Tradicionais<br>25 - R$65<br>50 - R$110<br>100 - R$200</div>
+<div class="info-card">Especiais<br>25 - R$77<br>50 - R$130<br>100 - R$220</div>
+<div class="info-card">Premium<br>25 - R$90<br>50 - R$165<br>100 - R$300</div>
+</div>
+
+<h2 class="section-title">Informações</h2>
+<div class="info-grid">
+<div class="info-card">Produção sob encomenda</div>
+<div class="info-card">Pedido com 50% antecipado</div>
+<div class="info-card">Retirada das 14h às 18h</div>
+</div>
+
+</div>
+</section>
+
+<!-- CONTATO -->
+<section class="contact-section">
+<div class="container">
+<h3>Contato</h3>
+<p>atelie27.doceria@gmail.com</p>
+
+<a class="whatsapp-btn"
+href="https://wa.me/5547999445543"
+target="_blank">
+Peça pelo WhatsApp
+</a>
+
+</div>
+</section>
 
 <script>
-
 function scrollToMenu(){
 document.getElementById("menu").scrollIntoView({behavior:"smooth"});
 }
 
-const reveals = document.querySelectorAll(".reveal");
-
-const observer = new IntersectionObserver((entries)=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("visible");
-}else{
-entry.target.classList.remove("visible");
-}
-});
-},{threshold:0.15});
-
-reveals.forEach(el=>{
-observer.observe(el);
-});
-
-/* CARROSSEL */
-
-document.querySelectorAll(".carousel").forEach(carousel => {
+document.querySelectorAll(".carousel").forEach(carousel=>{
 const images = carousel.querySelector(".carousel-images");
 const total = images.children.length;
 let index = 0;
 
-carousel.querySelector(".next").addEventListener("click", () => {
-index = (index + 1) % total;
-images.style.transform = `translateX(-${index * 100}%)`;
-});
+carousel.querySelector(".next").onclick = ()=>{
+index = (index+1)%total;
+images.style.transform = `translateX(-${index*100}%)`;
+};
 
-carousel.querySelector(".prev").addEventListener("click", () => {
-index = (index - 1 + total) % total;
-images.style.transform = `translateX(-${index * 100}%)`;
+carousel.querySelector(".prev").onclick = ()=>{
+index = (index-1+total)%total;
+images.style.transform = `translateX(-${index*100}%)`;
+};
 });
-});
-
 </script>
 
 </body>
